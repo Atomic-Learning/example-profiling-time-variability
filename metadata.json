@@ -1,22 +1,24 @@
 {
-    "title": "",
-    "slug": "",
-    "description": "",
+    "title": "Example: The Effect of Run Time Length on ProfilingVariability",
+    "slug": "example-run-length-profiling-time-variability",
+    "description": "An example of the effect of run length on the variability of profiling time variability.",
     "authors": [
-        "",
-        ""
+        "chris-cooling"
     ],
     "tags": [
-        "",
-        ""
+        "programming"
     ],
     "duration": 0,
     "prerequisites": [
-        "",
-        ""
+        "programming-profiling-time-variability",
+        "atomic-learning-python-cells",
+        "statistics-mean",
+        "statistics-population-variance-standard-deviation"
     ],
     "related": [
-        "",
-        ""
+    ],
+    "python_packages": [
+        "numpy",
+        "matplotlib"
     ]
 }
