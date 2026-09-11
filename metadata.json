@@ -8,7 +8,7 @@
     "tags": [
         "programming"
     ],
-    "duration": 0,
+    "duration": 3,
     "prerequisites": [
         "programming-profiling-time-variability",
         "atomic-learning-python-cells",
