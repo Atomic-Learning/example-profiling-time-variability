@@ -18,27 +18,16 @@ def short_run():
 
 
 def long_run():
-    for _ in range(1000):
+    for _ in range(100):
         core_operation()
 
-def very_long_run():
-    for _ in range(10000):
+def even_longer_run():
+    for _ in range(1000):
         core_operation()
 
 
 def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
     times = []
-    progress_width = 30
-    last_filled = -1
-
-    def show_progress(current_run):
-        nonlocal last_filled
-        filled = int((current_run / number_of_runs) * progress_width)
-        if filled != last_filled:
-            bar = "█" * filled + "░" * (progress_width - filled)
-            sys.stdout.write(f"\r[{bar}] Profiling...")
-            sys.stdout.flush()
-            last_filled = filled
 
     # Warm-up runs are intentionally silent to avoid extra status noise.
     for _ in range(warmup_runs):
@@ -49,7 +38,6 @@ def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
         function_to_profile()
         end_time = time.perf_counter()
         times.append(end_time - start_time)
-        show_progress(run_index)
 
     # Clear activity line before reporting final statistics.
     sys.stdout.write("\r" + " " * 50 + "\r")
