@@ -34,9 +34,9 @@ def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
         function_to_profile()
 
     for run_index in range(1, number_of_runs + 1):
-        start_time = time.perf_counter()
+        start_time = time.time()
         function_to_profile()
-        end_time = time.perf_counter()
+        end_time = time.time()
         times.append(end_time - start_time)
 
     # Clear activity line before reporting final statistics.
