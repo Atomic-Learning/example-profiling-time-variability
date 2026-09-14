@@ -12,15 +12,15 @@ from profiling_functions import profile_runs, short_run
 profile_runs(short_run)
 ```
 
-# Long Run
+# Medium
 
 ```py-cell
-from profiling_functions import profile_runs, long_run
+from profiling_functions import profile_runs, medium_run
 
-profile_runs(long_run)
+profile_runs(medium_run)
 ```
 
-# Even Longer Run
+# Long Run
 
 This run may take up to a couple of minutes.
 
