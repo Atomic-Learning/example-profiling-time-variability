@@ -1,8 +1,8 @@
-In this example, we will compare two different profiling runs, one of a short run and one of a longer run. Both runs perform the same core operation, but the long run repeats it many more times. We will observe how the run length affects the variability of the profiling results.
+In this example, we will compare three different profiling runs of different lengths. All runs perform do similar things, but the longer runs have longer tasks to do. You don't need to worry about the tasks that are being completed.
 
-In each case, the statistics of the runs, along with a histogram of run times will be produced.
+In each case, the task will be completed 1000 times, and statistics of the time taken to run the task, along with a histogram of run times will be produced.
 
-This example uses Python, but you don't need to understand the Python code in order to follow the concepts being demonstrated. You also don't need to worry about what the core operation being performed is.
+This example uses Python, but you don't need to understand the Python code in order to follow the concepts being demonstrated.
 
 # Short Run
 
