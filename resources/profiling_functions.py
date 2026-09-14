@@ -13,12 +13,12 @@ def core_operation():
 
 
 def short_run():
-    for _ in range(100):
+    for _ in range(10):
         core_operation()
 
 
 def medium_run():
-    for _ in range(300):
+    for _ in range(100):
         core_operation()
 
 def long_run():
