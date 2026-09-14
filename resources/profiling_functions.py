@@ -60,7 +60,7 @@ def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
     print(f"  n={len(times)}")
     print(f"  mean={mean_time:.8f}s")
     print(f"  standard deviation={sd_time:.8f}s")
-    print(f"  relative standard deviation={rsd:.4f}%")
+    print(f"  relative standard deviation={rsd:.4f}")
     print(f"  max={max_time:.8f}s")
     print(f"  min={min_time:.8f}s")
 
