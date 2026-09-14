@@ -48,7 +48,7 @@ def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
 
     mean_time = np.mean(times)
     sd_time = np.std(times, ddof=1)
-    rsd_percent = (sd_time / mean_time) * 100
+    rsd= sd_time / mean_time
     max_time = np.max(times)
     min_time = np.min(times)
 
@@ -57,11 +57,10 @@ def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
     plt.ylabel("Frequency")
     plt.title(f"{function_to_profile.__name__}: runtime distribution")
 
-    print(f"{function_to_profile.__name__}")
     print(f"  n={len(times)}")
     print(f"  mean={mean_time:.8f}s")
     print(f"  standard deviation={sd_time:.8f}s")
-    print(f"  relative standard deviation={rsd_percent:.8f}%")
+    print(f"  relative standard deviation={rsd:.4f}%")
     print(f"  max={max_time:.8f}s")
     print(f"  min={min_time:.8f}s")
     plt.show()
@@ -70,5 +69,5 @@ def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
 if __name__ == "__main__":
     profile_runs(short_run)
     profile_runs(long_run)
-    profile_runs(very_long_run)
+    profile_runs(even_longer_run)
 
