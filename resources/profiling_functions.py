@@ -55,8 +55,6 @@ def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
     print(f"  min={min_time:.8f}s")
     plt.show()
 
-    print("TEST")
-
 
 if __name__ == "__main__":
     profile_runs(short_run)
