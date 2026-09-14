@@ -1,4 +1,5 @@
 import time
+import sys
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -12,26 +13,48 @@ def core_operation():
 
 
 def short_run():
-    return core_operation()
+    for _ in range(10):
+        core_operation()
 
 
 def long_run():
     for _ in range(1000):
         core_operation()
 
+def very_long_run():
+    for _ in range(10000):
+        core_operation()
+
 
 def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
     times = []
+    progress_width = 30
+    last_filled = -1
 
-    # Warm-up run to reduce one-off startup effects in the measured sample.
+    def show_progress(current_run):
+        nonlocal last_filled
+        filled = int((current_run / number_of_runs) * progress_width)
+        if filled != last_filled:
+            bar = "█" * filled + "░" * (progress_width - filled)
+            sys.stdout.write(f"\r[{bar}] Profiling...")
+            sys.stdout.flush()
+            last_filled = filled
+
+    # Warm-up runs are intentionally silent to avoid extra status noise.
     for _ in range(warmup_runs):
         function_to_profile()
 
-    for _ in range(number_of_runs):
+    for run_index in range(1, number_of_runs + 1):
         start_time = time.perf_counter()
         function_to_profile()
         end_time = time.perf_counter()
         times.append(end_time - start_time)
+        show_progress(run_index)
+
+    # Clear activity line before reporting final statistics.
+    sys.stdout.write("\r" + " " * 50 + "\r")
+    sys.stdout.flush()
+    print()
 
     times = np.array(times)
 
@@ -59,4 +82,5 @@ def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
 if __name__ == "__main__":
     profile_runs(short_run)
     profile_runs(long_run)
+    profile_runs(very_long_run)
 
