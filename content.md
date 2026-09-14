@@ -20,14 +20,14 @@ from profiling_functions import profile_runs, long_run
 profile_runs(long_run)
 ```
 
-# Very Long Run
+# Even Longer Run
 
 This run may take up to a couple of minutes.
 
 ```py-cell
-from profiling_functions import profile_runs, very_long_run
+from profiling_functions import profile_runs, even_longer_run
 
-profile_runs(very_long_run)
+profile_runs(even_longer_run)
 ```
 
 # Comparison
