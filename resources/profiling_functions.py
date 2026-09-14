@@ -21,7 +21,7 @@ def medium_run():
     for _ in range(300):
         core_operation()
 
-def even_longer_run():
+def long_run():
     for _ in range(1000):
         core_operation()
 
@@ -68,5 +68,5 @@ def profile_runs(function_to_profile, number_of_runs=1000, warmup_runs=20):
 if __name__ == "__main__":
     profile_runs(short_run)
     profile_runs(medium_run)
-    profile_runs(even_longer_run)
+    profile_runs(long_run)
 
