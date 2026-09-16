@@ -12,4 +12,6 @@ profile_run()
 
 # Observations
 
-You should be able to see from the output that the amount of time it takes to run the code varies significantly from run to run. This demonstrates the inherent variability in execution time, even for the same piece of code.
+You should be able to see from the output that the amount of time it takes to run the code varies significantly from run to run. The distribution likely has a long tail showing there is a possibility of some runs taking much longer than the average. 
+
+These results demonstrate the inherent variability in execution time, even for the same piece of code.
