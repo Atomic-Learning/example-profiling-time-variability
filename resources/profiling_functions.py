@@ -38,10 +38,10 @@ def profile_run(number_of_runs=1000, warmup_runs=20):
     plt.title("Runtime Distribution")
 
     print(f"  n={len(times)}")
-    print(f"  mean={mean_time:.8f}s")
-    print(f"  standard deviation={sd_time:.8f}s")
-    print(f"  max={max_time:.8f}s")
-    print(f"  min={min_time:.8f}s")
+    print(f"  mean={mean_time:.4f}s")
+    print(f"  standard deviation={sd_time:.5f}s")
+    print(f"  max={max_time:.4f}s")
+    print(f"  min={min_time:.4f}s")
 
 
 if __name__ == "__main__":
